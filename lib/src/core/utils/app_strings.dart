@@ -1,5 +1,5 @@
 class AppStrings {
-  static const String appName = 'Posts App';
+  static const String appName = 'News Feeds App';
   static const String fontName = 'Expo';
   static const String pageNumber = '_page';
   static const String pageSize = '_limit';
