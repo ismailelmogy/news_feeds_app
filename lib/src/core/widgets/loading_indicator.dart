@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/hex_color.dart';
 
 class LoadingIndicator extends StatelessWidget {
   final double size;
@@ -6,9 +7,12 @@ class LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Center(child: CircularProgressIndicator()),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+          child: CircularProgressIndicator(
+        color: HexColor("#141414"),
+      )),
     );
   }
 }

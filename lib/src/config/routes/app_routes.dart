@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_feeds_app/src/features/home/presentation/bloc/home_bloc.dart';
 import '../../core/utils/app_strings.dart';
+import 'package:news_feeds_app/src/injection_container.dart' as di;
 import '../../features/home/presentation/screens/home_screen.dart';
 
 class Routes {
@@ -10,7 +13,10 @@ class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.mainRoute:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                create: (_) => di.serviceLocator<HomeBloc>(),
+                child: const HomeScreen()));
 
       default:
         return unDefinedRoute();
