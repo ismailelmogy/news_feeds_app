@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news_feeds_app/src/core/utils/app_images.dart';
-import 'package:news_feeds_app/src/core/utils/commons.dart';
-import 'package:news_feeds_app/src/core/utils/hex_color.dart';
-import 'package:news_feeds_app/src/core/utils/media_query_values.dart';
-import 'package:news_feeds_app/src/features/home/domain/entities/article.dart';
+import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/commons.dart';
+import '../../../../core/utils/hex_color.dart';
+import '../../../../core/utils/media_query_values.dart';
+import '../../domain/entities/article.dart';
 
 class ArticleWidget extends StatelessWidget {
   final Article article;

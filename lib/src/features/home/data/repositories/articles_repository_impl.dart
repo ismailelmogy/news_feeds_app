@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:news_feeds_app/src/features/home/data/datasources/articles_remote_data_source.dart';
+import '../datasources/articles_remote_data_source.dart';
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/utils/app_strings.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+
 import '../utils/media_query_values.dart';
 
 class SlideIn extends StatefulWidget {

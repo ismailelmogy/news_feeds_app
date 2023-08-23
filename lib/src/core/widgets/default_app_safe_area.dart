@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../utils/hex_color.dart';
 
 class DefaultAppSafeArea extends StatelessWidget {

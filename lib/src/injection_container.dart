@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:news_feeds_app/src/features/home/data/repositories/articles_repository_impl.dart';
+import 'core/bloc/drawer_bloc.dart';
+import 'features/home/data/repositories/articles_repository_impl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/api/api_consumer.dart';
 import 'core/api/app_interceptors.dart';
@@ -16,6 +17,8 @@ Future<void> init() async {
   serviceLocator.registerFactory<HomeBloc>(() => HomeBloc(
         getArticles: serviceLocator(),
       ));
+
+  serviceLocator.registerFactory<DrawerBloc>(() => DrawerBloc());
 
   // Use cases
   serviceLocator.registerLazySingleton<GetArticles>(

@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_feeds_app/src/features/home/domain/entities/article.dart';
+
 import '../../../../core/usecases/usecase.dart';
+import '../../domain/entities/article.dart';
 import '../../domain/usecases/get_articles.dart';
 
 part 'home_event.dart';

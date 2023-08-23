@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:news_feeds_app/src/core/utils/app_strings.dart';
-import 'package:news_feeds_app/src/features/home/domain/entities/article.dart';
-import 'package:news_feeds_app/src/features/home/domain/repositories/articles_repository.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../entities/article.dart';
+import '../repositories/articles_repository.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 

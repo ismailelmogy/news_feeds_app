@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_feeds_app/src/core/utils/app_images.dart';
-import 'package:news_feeds_app/src/core/utils/hex_color.dart';
-import 'package:news_feeds_app/src/features/home/presentation/widgets/article_widget.dart';
+import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/hex_color.dart';
+import '../../../../core/widgets/app_drawer.dart';
+import '../widgets/article_widget.dart';
 import '../../../../core/widgets/error_widget.dart' as error_widget;
 import '../../../../core/widgets/loading_indicator.dart';
 import '../bloc/home_bloc.dart';
@@ -15,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   AnimationController? _animationController;
   late HomeBloc _homeBloc;
 
@@ -42,14 +44,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       backgroundColor: HexColor("#141414"),
       leading: IconButton(
         icon: const Icon(Icons.menu),
-        onPressed: () {},
+        //     Navigator.pushNamed(
+        // event.context, drawerItems[event.index].routeNavigation);
+        onPressed: () => _scaffoldKey.currentState!.openDrawer(),
       ),
       actions: [
         IconButton(
           icon: Image.asset(
             AppImages.search,
-            height: 24,
-            width: 24,
+            height: 22,
+            width: 22,
           ),
           onPressed: () {},
         ),
@@ -62,6 +66,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
     return SafeArea(
         child: Scaffold(
+            key: _scaffoldKey,
+            drawer: AppDrawer(
+              closeDrawer: () => _scaffoldKey.currentState!.closeDrawer(),
+            ),
             backgroundColor: HexColor("#eeeeee"),
             appBar: appBar,
             body: BlocBuilder<HomeBloc, HomeState>(

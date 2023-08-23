@@ -1,4 +1,4 @@
-import 'package:news_feeds_app/src/features/home/data/models/article_model.dart';
+import '../models/article_model.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/commons.dart';
 import '../../../../core/api/api_consumer.dart';

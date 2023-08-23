@@ -8,7 +8,7 @@ import 'api_consumer.dart';
 import 'app_interceptors.dart';
 import 'end_points.dart';
 import 'status_code.dart';
-import 'package:news_feeds_app/src/injection_container.dart' as di;
+import '../../injection_container.dart' as di;
 
 class DioConsumer extends ApiConsumer {
   final Dio client;

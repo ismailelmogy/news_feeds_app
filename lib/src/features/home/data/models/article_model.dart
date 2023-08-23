@@ -1,4 +1,4 @@
-import 'package:news_feeds_app/src/features/home/domain/entities/article.dart';
+import '../../domain/entities/article.dart';
 
 class ArticleModel extends Article {
   const ArticleModel({
