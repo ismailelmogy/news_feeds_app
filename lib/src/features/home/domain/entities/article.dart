@@ -10,7 +10,7 @@ class Article extends Equatable {
     required this.publishedAt,
   });
 
-  final String author;
+  final String? author;
   final String title;
   final String description;
   final String url;

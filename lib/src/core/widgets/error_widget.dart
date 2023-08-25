@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'default_app_btn.dart';
 import '../utils/app_colors.dart';
 import '../utils/media_query_values.dart';
+import 'default_app_btn.dart';
 
 class ErrorWidget extends StatelessWidget {
   final String msg;

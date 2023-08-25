@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/article_details/article_details_screen.dart';
+import '../../features/home/domain/entities/article.dart';
 import '../../features/emagazine/presentation/screens/emagazine_screen.dart';
 import '../../features/gallery/presentation/screens/gallery_screen.dart';
 import '../../features/home/presentation/bloc/home_bloc.dart';
@@ -11,6 +13,7 @@ import '../../features/home/presentation/screens/home_screen.dart';
 
 class Routes {
   static const mainRoute = '/';
+  static const articleDetailsRoute = '/articleDetails';
   static const liveChatRoute = '/liveChat';
   static const galleryRoute = '/gallery';
   static const wishListRoute = '/wishList';
@@ -19,12 +22,21 @@ class Routes {
 
 class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
+    final args = routeSettings.arguments;
+
     switch (routeSettings.name) {
       case Routes.mainRoute:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
                 create: (_) => di.serviceLocator<HomeBloc>(),
                 child: const HomeScreen()));
+
+      case Routes.articleDetailsRoute:
+        var article = args as Article;
+        return MaterialPageRoute(
+            builder: (_) => ArticleDetailsScreen(
+                  article: article,
+                ));
 
       case Routes.liveChatRoute:
         return MaterialPageRoute(builder: (_) => const LiveChatScreen());

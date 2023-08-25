@@ -2,7 +2,7 @@ import '../../domain/entities/article.dart';
 
 class ArticleModel extends Article {
   const ArticleModel({
-    required String author,
+    required String? author,
     required String title,
     required String description,
     required String url,

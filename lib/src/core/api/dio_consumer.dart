@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
+import '../../injection_container.dart' as di;
 import '../error/exceptions.dart';
 import 'api_consumer.dart';
 import 'app_interceptors.dart';
 import 'end_points.dart';
 import 'status_code.dart';
-import '../../injection_container.dart' as di;
 
 class DioConsumer extends ApiConsumer {
   final Dio client;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_feeds_app/src/core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/hex_color.dart';
 import '../../../../core/widgets/app_drawer.dart';
@@ -44,8 +45,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       backgroundColor: HexColor("#141414"),
       leading: IconButton(
         icon: const Icon(Icons.menu),
-        //     Navigator.pushNamed(
-        // event.context, drawerItems[event.index].routeNavigation);
         onPressed: () => _scaffoldKey.currentState!.openDrawer(),
       ),
       actions: [
@@ -64,15 +63,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             fontWeight: FontWeight.w500, color: Colors.white, fontSize: 18),
       ),
     );
-    return SafeArea(
-        child: Scaffold(
-            key: _scaffoldKey,
-            drawer: AppDrawer(
-              closeDrawer: () => _scaffoldKey.currentState!.closeDrawer(),
-            ),
-            backgroundColor: HexColor("#eeeeee"),
-            appBar: appBar,
-            body: BlocBuilder<HomeBloc, HomeState>(
+    return Scaffold(
+        key: _scaffoldKey,
+        drawer: AppDrawer(
+          closeDrawer: () => _scaffoldKey.currentState!.closeDrawer(),
+        ),
+        backgroundColor: HexColor("#eeeeee"),
+        appBar: appBar,
+        body: RefreshIndicator(
+            color: AppColors.primaryColor,
+            onRefresh: () async => _getAllArticles(),
+            child: BlocBuilder<HomeBloc, HomeState>(
               builder: (context, state) {
                 if (state is HomeIsLoading) {
                   return const LoadingIndicator();

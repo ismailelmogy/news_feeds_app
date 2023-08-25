@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../utils/hex_color.dart';
+
 import '../entities/drawer_item.dart';
+import '../utils/hex_color.dart';
 
 class DrawerListTile extends StatelessWidget {
   final DrawerItem drawerItem;

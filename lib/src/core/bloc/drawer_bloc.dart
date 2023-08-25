@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../config/routes/app_routes.dart';
-
 import '../entities/drawer_item.dart';
 import '../utils/app_images.dart';
 
