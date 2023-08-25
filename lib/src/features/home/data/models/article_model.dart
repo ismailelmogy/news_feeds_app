@@ -17,12 +17,12 @@ class ArticleModel extends Article {
             publishedAt: publishedAt);
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) => ArticleModel(
-        author: json["author"],
-        title: json["title"],
-        description: json["description"],
-        url: json["url"],
-        urlToImage: json["urlToImage"],
-        publishedAt: json["publishedAt"],
+        author: json["author"] ?? '',
+        title: json["title"] ?? '',
+        description: json["description"] ?? '',
+        url: json["url"] ?? '',
+        urlToImage: json["urlToImage"] ?? '',
+        publishedAt: json["publishedAt"] ?? '',
       );
 
   Map<String, dynamic> toJson() => {
